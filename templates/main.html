@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Blog Name</title>
+    <link rel="stylesheet" href="/static/assets/css/main.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header>
+        <div class="search-bar">
+            <!-- Search Bar -->
+            <input type="text" placeholder="Search for username...">&nbsp; &nbsp;<i class='bx bx-search-alt-2' ></i>
+        </div>
+             <!-- Profile -->
+        <div class="user-actions">
+            <div class="profile-icon">
+                <img src="/cc.png" alt="User Profile">
+            </div>
+            <!-- upload button -->
+            <button class="upload-button" id="upload-button">Upload Post</button>
+                <div class="upload-form" id="upload-form">
+                    <h4>Upload image</h4>
+                <input type="file" id="image-upload" accept="image/*" />
+                <textarea id="caption" placeholder="Add caption..."></textarea>
+                <button id="post-button">Post</button>
+                </div>
+
+            <!-- Profile Icon Goes Here -->
+            
+        </div>
+    </header>
+    
+    <main>
+        <!-- Post Grid Goes Here -->
+        <div class="post-grid">
+            <!-- Sample Post -->
+            <div class="post">
+                <img src="post-image1.jpg" alt="Post 1">
+                <p>Post Caption 1</p>
+            </div>
+            <!-- Sample Post -->
+            <div class="post">
+                <img src="post-image2.jpg" alt="Post 2">
+                <p>Post Caption 2</p>
+            </div>
+            <!-- Add more posts here -->
+        </div>
+    </main>
+
+    <!-- <footer>     
+    </footer> -->
+    <script src="/static/assets/js/main.js"></script>
+
+</body>
+</html>

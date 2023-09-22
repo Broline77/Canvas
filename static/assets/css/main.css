@@ -1,0 +1,147 @@
+/* Reset some default styles for margin and padding */
+body, h1, h2, h3, p, ul, li, form {
+    margin: 0;
+    padding: 0;
+}
+
+h4{
+    color: #162938;
+}
+
+/* Apply a background color to the body */
+body {
+    background-color: #162938;
+    font-family: Arial, sans-serif;
+}
+
+/* Style the header section */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #202e37;
+    color: white;
+    padding: 15px 20px;
+}
+
+/* Style the search bar */
+.search-bar input[type="text"] {
+    padding: 15px 40px;
+    border: none;
+    border-radius: 10px;
+}
+
+/* Style the upload button */
+/*
+.upload-button {
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+}
+*/
+.upload-button:hover{
+    background-color: rebeccapurple;
+}
+
+
+
+/* Initially hide the upload form */
+.upload-form {
+    display: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    position:absolute;
+    top: 100px; /* Adjust the top position as needed */
+    right: 20px; /* Adjust the right position as needed */
+    z-index: 1;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    max-width: 300px;
+  }
+  
+  /* Style the button */
+  .upload-button {
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 15px;
+    cursor: pointer;
+  }
+  
+  /* Style the form elements */
+  #image-upload {
+    margin-bottom: 10px;
+  }
+  
+  #caption {
+    width: 100%;
+    height: 60px;
+  }
+  
+  #post-button {
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+
+/* Style the profile icon */
+.profile-icon img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+/* Style the main content area */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Style individual posts in the grid */
+.post {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 300px;
+    text-align: center;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+/* Add responsive styles */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .search-bar, .user-actions {
+        margin-bottom: 10px;
+    }
+
+    .profile-icon {
+        margin: 10px 0;
+    }
+
+    main {
+        padding: 10px;
+    }
+}
