@@ -1,9 +1,9 @@
-# BlogByte Website 
+# BlogByte Website mvp
 
-[Live vesion](https://broline.pythonanywhere.com)
+##[Live version](https://broline.pythonanywhere.com)
 
 
-BlogByte is a simple and user-friendly blogging platform that allows users to create accounts, share images, and connect with other users. This README provides an overview of the project, instructions for setup, and key features.
+BlogByte is a user-friendly image-sharing platform designed for artists and individuals alike. It provides a simple and seamless experience, enabling users to create accounts, share their creative images, and connect with fellow enthusiasts. This README provides an overview of the project, instructions for setup, and key features.
 
 ## Features
 
@@ -85,10 +85,10 @@ I welcome contributions! If you'd like to contribute to the project feel free to
 * Create a new branch: git checkout -b feature/your-feature
 * Make your changes and commit them: git commit -m 'Add feature'
 * Push to the branch: git push origin feature/your-feature
-* Submit a pull request. ⭐😊
+* Submit a pull request.
 
 
-##Frontend still in devolopment🔧
+## Frontend still in devolopment🔧
 
 
 
