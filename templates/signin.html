@@ -1,13 +1,17 @@
-<!--{% load static %}-->
+{% load static %}
+
+
+
 <html lang="en">
+
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BlogByte | Login</title>
- <!--   <link rel="stylesheet" href="{% static 'accounts/styles/register.css' %}"> -->
-    <link rel="stylesheet" href="/static/assets/css/login.css">
-    <!-- <link rel="icon" type="image/x-icon" href="images/favicon.png" > -->
+    <link rel="stylesheet" href="{% static 'assets/css/signin.css' %}">
+    
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     
 </head>
@@ -17,7 +21,7 @@
         <h2><i class='bx bxs-palette' ></i>BlogByte</h2>
         
         <nav class="navbar">
-            <a href="index.html">Home</a>
+            <a href="/signup">Signup</a>
         </nav>
     </header>
 
@@ -25,10 +29,21 @@
 
     <div class="logreg-box">
         <div class="form-box login">
-            <form action="" method="post">
-                <!-- MODIFIED: ADDS A TOKEN TO LOGIN FORM TO DEFEND AGAINST CSRF -->
-                <!--{% csrf_token %} -->
+            <form action="" method="POST">
+                {% csrf_token %}
                 <h2>Login</h2>
+<!--FORM ERRORS-->
+                <div>
+                    <style>
+                        h5{
+                            color: red;
+                        }
+                    </style>
+                    {% for message in messages %}
+                    <h5>{{message}}</h5>
+                    {% endfor %}
+                </div>
+                
 
                 <div class="input-box">
                     <span class="icon"><i class='bx bxs-envelope'></i></span>
@@ -48,34 +63,28 @@
 
                 <button type="submit" name="login" class="btn">Login</button>
                 <div class="login-register">
-                    <p>Don't have an account? <a href="signup.html" class="register-link">Sign up</a></p>
+                    <p>Don't have an account? <a href="/signup" class="register-link">Sign up</a></p>
                 </div>
 
                 
                 <div>
-                    <!-- EMAIL FORM ERRORS -->
-                    <!--{% for error  in loginform.email.errors %} -->
-                    <!--<span class="formerror">*{{error}}</span> -->
-                    <!--{% endfor %}-->
-
-                    <!-- PASSWORD FORM ERRORS -->
-                    <!--{% for error  in loginform.password.errors %}-->
-                    <!--<span class="formerror">*{{error}}</span>-->
-                    <!--{% endfor %} -->
                 </div>
             </form>
         </div>    
     </div>
 
     <div class="social-icons">
-        <a href="about.html"><i class='bx bxs-palette'></i></a>
-        <a href="index.html"><i class='bx bxs-home-alt-2' ></i></a>
+       
         <a href="BlogByte-twitter"><i class='bx bxl-twitter' ></i></a>
         <a href="BlogByte-facebook"><i class='bx bxl-facebook-circle' ></i></a>
         <a href="BlogByte-instagram"><i class='bx bxl-instagram-alt' ></i></a>
     </div>
 
-    <script src="#"></script>
+    <footer>
+        <p>@ copyright 2023 by Broline</p>
+    </footer>
+
+
     
 </body>
 </html>

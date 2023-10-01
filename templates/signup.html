@@ -1,13 +1,14 @@
-<!--{% load static %} -->
+{% load static %} 
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BlogByte | Register</title>
-    <!--<link rel="stylesheet" href="{% static 'accounts/styles/register.css' %}"> -->
-    <link rel="stylesheet" href="/static/assets/css/signup.css">
-    <!-- <link rel="icon" type="image/x-icon" href="images/favicon.png" > -->
+    <link rel="stylesheet" href="{% static 'assets/css/signup.css' %}">
+
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     
 </head>
@@ -16,7 +17,7 @@
     <header class="header">
         <h2><i class='bx bxs-palette' ></i>BlogByte</h2>
         <nav class="navbar">
-            <a href="index.html">Home</a>
+            <a href="/signin">Login</a>
             
         </nav>
     </header>
@@ -25,14 +26,27 @@
 
     <div class="logreg-box">    
         <div class="form-box register">
-            <form action="" method="post">
-                <!-- MODIFIED: ADDS A TOKEN TO REGISTRATION FORM TO DEFEND AGAINST CSRF -->
-               <!-- {% csrf_token %} -->
+
+<!--messages-->
+            <div>
+                <style>
+                    h5{
+                        color: red;
+                    }
+                </style>
+                {% for message in messages %}
+                <h5>{{message}}</h5>
+                {% endfor %}
+            </div>
+
+
+            <form action="" method="POST">
+               {% csrf_token %}
                 <h2>Sign up</h2>
 
                 <div class="input-box">
                     <span class="icon"><i class='bx bxs-user'></i></span>
-                    <input type="text" name="alias" id="username" pattern=".{3,18}" title="Username must be between 3-18 characters" required>
+                    <input type="text" name="username" id="username" required>
                     <label>Name</label>
                 </div>
 
@@ -49,35 +63,24 @@
                     <input type="password" name="password" id="password" required>
 
                     <label>Password</label>
-
-                
                 </div>
-                <div class="remember-forgot">
-                    <label><input type="checkbox">Terms</label>
+
+                <div class="input-box">
+                    <span class="icon"><i class='bx bxs-lock-alt' ></i></span>
+
+                    <input type="password" name="password2" id="password" required>
+
+                    <label>Confirm Password</label>
                 </div>
 
                 <button type="submit" name="registration" class="btn">Sign up</button>
                 <div class="login-register">
-                    <p>Already have an account? <a href="login.html" class="login-link">Login</a></p>
+                    <p>Already have an account? <a href="/signin" class="login-link">Login</a></p>
                 </div>
                 
                 
                 <div>
-                    <!-- USERNAME FORM ERRORS -->
-                    <!--{% for error  in regform.alias.errors %} -->
-                    <!--<span class="formerror">*{{error}}</span> -->
-                    <!-- {% endfor %} -->
-
-
-                    <!-- EMAIL FORM ERRORS -->
-                    <!-- {% for error  in regform.email.errors %} -->
-                    <!--<span class="formerror">*{{error}}</span> -->
-                    <!-- {% endfor %} -->
-
-                    <!-- PASSWORD FORM ERRORS -->
-                    <!-- {% for error  in regform.password.errors %} -->
-                    <!-- <span class="formerror">*{{error}}</span> -->
-                    <!-- {% endfor %} -->
+                    
                 </div>
             </form>
         </div>    
@@ -87,14 +90,11 @@
     </div>
 
     <div class="social-icons">
-        <a href="recipe.html"><i class='bx bxs-palette'></i></a>
-        <a href="index.html"><i class='bx bxs-home-alt-2' ></i></a>
-        <a href="RecipeRealms-twitter"><i class='bx bxl-twitter' ></i></a>
-        <a href="RecipeRealms-facebook"><i class='bx bxl-facebook-circle' ></i></a>
-        <a href="RecipeRealms-instagram"><i class='bx bxl-instagram-alt' ></i></a>
+        <a href="BlogByte-twitter"><i class='bx bxl-twitter' ></i></a>
+        <a href="BlogByte-facebook"><i class='bx bxl-facebook-circle' ></i></a>
+        <a href="BlogByte-instagram"><i class='bx bxl-instagram-alt' ></i></a>
     </div>
 
-    <script src="{% static 'accounts/scripts/register.js' %}"></script>
     
 </body>
 </html>

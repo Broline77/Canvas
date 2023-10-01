@@ -1,31 +1,130 @@
+{% load static %} 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/assets/css/styles.css">
+    <title>BlogByte | Home</title>
+
+    
+    <link rel="stylesheet" href="{% static 'assets/css/index.css' %}">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <title>BlogByte</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+
+    
 </head>
 <body>
     <header>
-        <div class="logo">
-            <h1><i class='bx bxs-palette'></i></a>BlogByte</h1>
+        <div class="search-bar">
+            <!-- Search Bar -->
+            <input type="text" placeholder="Search for username...">&nbsp; &nbsp;<i class='bx bx-search-alt-2' ></i>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">contact us</a></li>
-                <li><a href="login.html">Login</a></li>
-                
-                
-
-            </ul>
+        <nav class="nav">
+            <h3>
+                BlogByte<i class='bx bxs-palette'></i></a> <!--replace with image-->
+            </h3>
         </nav>
+        
+             <!-- Profile icon-->
+        <div class="user-actions">
+            <div class="profile-icon" id="profile-icon">
+                <img src="{{user_profile.profileimg.url}}" alt="User Profile">
+            </div>
+
+            <div class="popup" id="popup">
+                    <a href="/settings" id="account-settings">Account Settings</a>
+                    <a href="logout" id="logout">Logout</a>
+                      
+            </div>
+           
+            <!-- upload button -->
+            
+
+            <button class="upload-button" id="upload-button">Upload Post</button>
+                <div class="upload-form" id="upload-form">
+                    <h4>Upload image</h4>
+            <form action="upload" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+        
+                <input type="file" id="image-upload" accept="image/*" />
+                    <h4>Add caption</h4>
+                <textarea id="caption" name="caption" placeholder="Add caption..."></textarea>
+                <br>
+                
+                <button id="post-button">Post</button>
+                </div>
+
+            </form>
+
+            
+            
+        </div>
     </header>
     
-    <section class="featured-articles">
-        <h2>Featured Articles</h2>
-    </section>
+    <main>
+        <!-- Post Grid Goes Here -->
+        <div class="post-grid">
+            <!-- Sample Post -->
+
+            {% for post in posts reversed %}
+            <div class="post">
+
+                <div class="post-header">
+                    <span class="uploader-username"><a href="/profile/{{post.user}}"><strong>{{post.user}}</strong></a><p class="caption">{{post.caption}}</p></span>
+                </div>
+
+                
+                <img src="{{user_profile.profileimg.url}}" alt="sample_post" class="post-image expandable-image fit-image" onclick="expandImage(this)">
+                
+                <div class="post-footer">
+                    <div class="post-actions">
+
+<!-- Likes icon -->     <div class="likes-icon">
+                        <a href="/like-post?post_id={{post.id}}">
+                            
+
+                            <i class="material-icons">thumb_up</i>
+                            {% if post.no_of_likes == 0 %}
+                            <p>No likes</p>
+                            {% elif post.no_of_likes == 1 %}
+                            <p>Liked by {{post.no_of_likes}} person</p>
+                            {% else %}
+                            <p>Liked by {{post.no_of_likes}} people</p>
+                            
+                            {% endif %} 
+
+                        </a>
+                        </div>
+                        
+ <!-- Download icon -->
+                        <div class="download-icon">
+                            <a href="{{user_profile.profileimg.url}}" download><i class="material-icons">download</i></a>   
+                        </div>
+
+                        
+                    </div>
+
+                
+                </div>
+            </div>
+            {% endfor %}
+
+            
+
+
+        </div>
+        
+        
+    </main>
+
+    <!-- scripts -->
+    <script src="{% static 'assets/js/main.js' %}"></script>  
+    <script src="{% static 'assets/js/post.js' %}"></script>  
+    <script src="{% static 'assets/js/profile.js' %}"></script>
+
+
 </body>
 </html>

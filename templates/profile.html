@@ -1,0 +1,55 @@
+{% load static %} 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'assets/css/profile.css' %}">
+    
+
+    <title>Profile |  {{user_profile.user.username}}</title>
+</head>
+<body>
+    <div class="profile-container">
+        <div class="profile-header">
+            <img src="{{user_profile.profileimg.url}}" alt="User Profile Image">
+            <h2>{{user_profile.user.username}}</h2>
+            <p>{{user_profile.bio}}</p>
+            <div class="profile-stats">
+                <div class="stat">
+                    <span>Followers</span>
+                    <span>500</span>
+                </div>
+                <div class="stat">
+                    <span>Posts</span>
+                    <span>100</span>
+                </div>
+                <div class="stat">
+                    <span>Following</span>
+                    <span>250</span>
+                </div>
+            </div>
+            <button id="follow-button">Follow</button>
+        </div>
+        <div class="profile-posts">
+            <h3>User's Posts</h3>
+
+
+            <div class="post-grid" >
+                {% for post in user_posts %}
+				<li>
+					<a class="post" href="{{user_profile.profileimg.url}}">
+						<img src="{{user_profile.profileimg.url}}">
+                    </a>
+				</li>
+				{% endfor %}
+             </div>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'assets/js/profiles.js' %}"></script>
+</body>
+</html>

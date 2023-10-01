@@ -241,6 +241,8 @@ header h2 {
     text-decoration: underline;
 }
 
+
+
 @media only screen and (max-width: 720px) {
     .navbar a{
         display: flex;
