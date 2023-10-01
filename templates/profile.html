@@ -41,8 +41,8 @@
             <div class="post-grid" >
                 {% for post in user_posts %}
 				<li>
-					<a class="post" href="{{user_profile.profileimg.url}}">
-						<img src="{{user_profile.profileimg.url}}">
+					<a class="post" href="{{post.image.url}}">
+						<img src="{{post.image.url}}">
                     </a>
 				</li>
 				{% endfor %}

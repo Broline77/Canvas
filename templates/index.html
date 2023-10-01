@@ -14,12 +14,14 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
 
-    
 </head>
+
 <body>
+
     <header>
         <div class="search-bar">
             <!-- Search Bar -->
+            <!--addfunctionality later-->
             <input type="text" placeholder="Search for username...">&nbsp; &nbsp;<i class='bx bx-search-alt-2' ></i>
         </div>
         <nav class="nav">
@@ -33,7 +35,7 @@
             <div class="profile-icon" id="profile-icon">
                 <img src="{{user_profile.profileimg.url}}" alt="User Profile">
             </div>
-
+            <!--dropdown-->
             <div class="popup" id="popup">
                     <a href="/settings" id="account-settings">Account Settings</a>
                     <a href="logout" id="logout">Logout</a>
@@ -46,10 +48,11 @@
             <button class="upload-button" id="upload-button">Upload Post</button>
                 <div class="upload-form" id="upload-form">
                     <h4>Upload image</h4>
+
             <form action="upload" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
         
-                <input type="file" id="image-upload" accept="image/*" />
+                <input type="file" id="image-upload" name="image_upload" accept="image/*" />
                     <h4>Add caption</h4>
                 <textarea id="caption" name="caption" placeholder="Add caption..."></textarea>
                 <br>
@@ -76,8 +79,8 @@
                     <span class="uploader-username"><a href="/profile/{{post.user}}"><strong>{{post.user}}</strong></a><p class="caption">{{post.caption}}</p></span>
                 </div>
 
-                
-                <img src="{{user_profile.profileimg.url}}" alt="sample_post" class="post-image expandable-image fit-image" onclick="expandImage(this)">
+                <!--imagebug-->
+                <img src="{{post.image.url}}" alt="sample_post" class="post-image expandable-image fit-image" onclick="expandImage(this)">
                 
                 <div class="post-footer">
                     <div class="post-actions">
@@ -101,7 +104,8 @@
                         
  <!-- Download icon -->
                         <div class="download-icon">
-                            <a href="{{user_profile.profileimg.url}}" download><i class="material-icons">download</i></a>   
+                            <!--image bug-->
+                            <a href="{{post.image.url}}" download><i class="material-icons">download</i></a>   
                         </div>
 
                         
