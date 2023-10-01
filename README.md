@@ -89,5 +89,5 @@ I welcome contributions! If you'd like to contribute to the project feel free to
 
 ## Authors
 
-[https://github.com/Broline77](Broline Oronu).
+[Broline Oronu](https://github.com/Broline77).
 
