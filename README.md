@@ -1,6 +1,6 @@
 # BlogByte Website mvp
 
-##[Live version](https://broline.pythonanywhere.com)
+## [Live version](https://broline.pythonanywhere.com)
 
 
 BlogByte is a user-friendly image-sharing platform designed for artists and individuals alike. It provides a simple and seamless experience, enabling users to create accounts, share their creative images, and connect with fellow enthusiasts. This README provides an overview of the project, instructions for setup, and key features.
