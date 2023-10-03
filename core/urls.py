@@ -1,11 +1,7 @@
-#import the path function from djangos url module used to define url patterns
 from django.urls import path
 from . import views
 
-#a list of 'path' objects that map URLS to view functions
-#''empty string reps the base url/root url of your website/home
-#views.index --> the view function that should handlle requests to this url
-#name=index assigns a name to te url pattern for easy use
+
 urlpatterns = [
     path('', views.index, name='index'),
     path('settings', views.settings, name='settings'),

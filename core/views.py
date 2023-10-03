@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect
-#imports the render function --> renders HTML templates 
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from django.http import HttpResponse
@@ -7,15 +6,11 @@ from django.contrib.auth.decorators import login_required
 from .models import Profile, Post, LikePost, FollowersCount
 from itertools import chain
 import random
-
-#imports the HttpResponse class --> used to create HTTP responses that cam be sent back to the clientsweb browser 
+ 
 
 # Create your views here.
-#takes a 'request' --> containing info about incomig http request eg headers, params ,data. object as its argument and returns an 'HttpResponse' object/html file
 
-"""decorators
-    @login_required
-"""
+
 @login_required(login_url='signin')
 def index(request):
     #get the object of the currently logged in user 
@@ -42,9 +37,6 @@ def index(request):
 
     posts = Post.objects.all()
     return render(request, 'index.html', {'user_profile': user_profile, 'posts':posts})
-    #buggy custom feed
-    #return render(request, 'index.html', {'user_profile': user_profile, 'posts':feed_lists, 'suggestions_username_profile_list': suggestions_username_profile_list[:3]})
-
 
 @login_required(login_url='signin')
 def upload(request):
@@ -111,7 +103,7 @@ def like_post(request):
         post.save()
         return redirect('/')
     
-#profile is buggy   
+#bug fixed  
 @login_required(login_url='signin')
 def profile(request, pk):
     user_object = User.objects.get(username=pk)
@@ -131,7 +123,7 @@ def profile(request, pk):
     user_following = len(FollowersCount.objects.filter(follower=pk))
 
 
-    #is this valid
+    #fixed
     context = {
         'user_object': user_object,
         'user_profile': user_profile,

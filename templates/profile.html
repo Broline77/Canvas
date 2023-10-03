@@ -13,6 +13,7 @@
     <title>Profile |  {{user_profile.user.username}}</title>
 </head>
 <body>
+    <div class="background">
     <div class="profile-container">
         <div class="profile-header">
             <img src="{{user_profile.profileimg.url}}" alt="User Profile Image">
@@ -49,6 +50,7 @@
              </div>
             </div>
         </div>
+    </div>
     </div>
     <script src="{% static 'assets/js/profiles.js' %}"></script>
 </body>

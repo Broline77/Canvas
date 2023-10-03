@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BlogByte | Home</title>
+    <title>ContentCanvas | Home</title>
 
     
     <link rel="stylesheet" href="{% static 'assets/css/index.css' %}">
@@ -26,7 +26,7 @@
         </div>
         <nav class="nav">
             <h3>
-                BlogByte<i class='bx bxs-palette'></i></a> <!--replace with image-->
+                ContentCanvas <i class='bx bxs-palette'></i></a> <!--replace with image-->
             </h3>
         </nav>
         
@@ -93,9 +93,9 @@
                             {% if post.no_of_likes == 0 %}
                             <p>No likes</p>
                             {% elif post.no_of_likes == 1 %}
-                            <p>Liked by {{post.no_of_likes}} person</p>
+                            <p>{{post.no_of_likes}} person liked this </p>
                             {% else %}
-                            <p>Liked by {{post.no_of_likes}} people</p>
+                            <p>{{post.no_of_likes}} people liked this </p>
                             
                             {% endif %} 
 

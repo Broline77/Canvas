@@ -1,11 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
 
-/* Reset some default styles */
+
+
 body {
     margin: 0;
     padding: 0;
     font-family: 'Source Sans Pro', sans-serif;
     background-color: #020410;
+}
+
+.background{
+    width: 100%;
+    height: 100vh;
+    background: url('../images/canvas.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(20px);
 }
 
 /* Center the form vertically and horizontally */
@@ -19,7 +29,7 @@ body {
 
 /* Style the form container */
 form {
-    background-color: #1d6364;
+    background-color: rgb(154, 154, 207);
     border-radius: 15px;
     padding: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
@@ -56,7 +66,7 @@ button {
     cursor: pointer;
 }
 
-/* Style the submit button on hover */
+
 input[type="submit"]:hover {
     background-color: #0056b3;
 }
