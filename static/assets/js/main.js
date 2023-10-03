@@ -18,8 +18,7 @@ uploadButton.addEventListener('click', (e) => {
 
 // Handle form submission (you can customize this part)
 postButton.addEventListener('click', () => {
-  // Handle form submission logic here
-  // ...
+
 
   // After posting, hide the form
   hideUploadForm();
