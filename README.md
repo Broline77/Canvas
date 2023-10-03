@@ -1,9 +1,9 @@
-# BlogByte Website mvp
+# ContentCanvas Website mvp
 
 ## [Live version](https://broline.pythonanywhere.com)
 
 
-BlogByte is a user-friendly image-sharing platform designed for artists and individuals alike. It provides a simple and seamless experience, enabling users to create accounts, share their creative images, and connect with fellow enthusiasts. This README provides an overview of the project, instructions for setup, and key features.
+ContentCanvas is a user-friendly image-sharing platform designed for artists and individuals alike. It provides a simple and seamless experience, enabling users to create accounts, share their creative images, and connect with fellow enthusiasts. This README provides an overview of the project, instructions for setup, and key features.
 
 ## Features
 
@@ -25,7 +25,6 @@ Follow these instructions to get a copy of the project up and running on your lo
 
 - Python (3.6 or higher)
 - Django (3.2 or higher)
-- PostgreSQL (optional, for production)
 
 ### Installation
 
@@ -38,7 +37,7 @@ Follow these instructions to get a copy of the project up and running on your lo
 2. Change the working directory:
 
    ```bash
-   cd blogbyte
+   cd Canvas
    ```
 
 3. make a virtual environment and activate it:
@@ -76,7 +75,7 @@ Follow these instructions to get a copy of the project up and running on your lo
 2. Update your profile information and add a profile picture.
 3. Upload images with captions.
 4. Like and download images.
-5. Explore and enjoy the BlogByte community.
+5. Explore and enjoy the ContentCanvas community.
 
 ## Contributing
 
