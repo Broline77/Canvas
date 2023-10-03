@@ -12,6 +12,7 @@ User =get_user_model()
 """
 
 # Create your models here.
+
 #model for the a new user
 class Profile(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)

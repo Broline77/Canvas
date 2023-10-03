@@ -208,7 +208,6 @@ main {
 
 
 
-/* Add responsive styles */
 @media screen and (max-width: 768px) {
     header {
         flex-direction: column;
